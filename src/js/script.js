@@ -20,7 +20,6 @@ function montarListaProdutos(listaProdutos) {
   });
 }
 
-
 function filtrarPorHortifruti() {
   const listaHortifruti = produtos.filter((produto) => {
     return produto.secao === "Hortifruti";
@@ -29,17 +28,13 @@ function filtrarPorHortifruti() {
   somarTotalItems(listaHortifruti);
 }
 
-
 const botaoMostrarHortifruti = document.querySelector(
   ".estiloGeralBotoes--filtrarHortifruti"
 );
 
-
 botaoMostrarHortifruti.addEventListener("click", filtrarPorHortifruti);
 
-
 const input = document.querySelector("#inputBuscar");
-
 
 function nomeItem() {
   const inputValueMinuscula = input.value.toLowerCase();
@@ -53,14 +48,11 @@ function nomeItem() {
   somarTotalItems(listaNomeItem);
 }
 
-
 const botaoBuscarPorNome = document.querySelector(
   ".estiloGeralBotoes--botaoBuscaPorNome"
 );
 
-
 botaoBuscarPorNome.addEventListener("click", nomeItem);
-
 
 input.addEventListener("keyup", (event) => {
   if (event.keyCode === 13) {
@@ -68,26 +60,22 @@ input.addEventListener("keyup", (event) => {
   }
 });
 
-
 function mostrarTodos() {
   montarListaProdutos(produtos);
   somarTotalItems(produtos);
 }
 
-
 const botaoBuscarTodos = document.querySelector(
   ".estiloGeralBotoes--mostrarTodos"
 );
 
-
 botaoBuscarTodos.addEventListener("click", mostrarTodos);
 
-
-function somarTotalItems(array){
-    let result = 0
-    for(let i = 0; i < array.length;i++){
-        result += array[i].preco
-    }
-    const valorItem = document.querySelector("#precoTotal");
-   return  valorItem.innerText = result
+function somarTotalItems(array) {
+  let result = 0;
+  for (let i = 0; i < array.length; i++) {
+    result += array[i].preco;
+  }
+  const valorItem = document.querySelector("#precoTotal");
+  return (valorItem.innerText = result);
 }
