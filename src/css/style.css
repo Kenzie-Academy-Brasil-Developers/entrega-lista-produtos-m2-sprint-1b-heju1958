@@ -48,7 +48,7 @@ body {
 }
 
 /* CONTEÚDO */
-main{}
+/* main{} */
 
 .containerListaProdutos {
     width: 100%;
@@ -104,4 +104,4 @@ main{}
     font-size: 1.4rem;
     font-weight: 600;
 }
-.containerPrecoTotal p span{}
+/* .containerPrecoTotal p span{} */
