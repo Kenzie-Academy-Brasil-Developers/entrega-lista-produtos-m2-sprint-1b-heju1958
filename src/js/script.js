@@ -6,19 +6,22 @@ function montarListaProdutos(listaProdutos) {
     const li = document.createElement("li");
     const img = document.createElement("img");
     const h3 = document.createElement("h3");
-    const p = document.createElement("p");
     const span = document.createElement("span");
+    const p = document.createElement("p");
+    
 
     img.src = produto.img;
     img.alt = produto.nome;
     h3.innerText = produto.nome;
-    p.innerText = produto.preco;
     span.innerText = produto.secao;
+    p.innerText = `R$ ${produto.preco}`;
+    
 
-    li.append(img, h3, p, span);
+    li.append(img, h3, span, p);
     ul.append(li);
   });
 }
+montarListaProdutos(produtos);
 
 function filtrarPorHortifruti() {
   const listaHortifruti = produtos.filter((produto) => {
@@ -77,5 +80,5 @@ function somarTotalItems(array) {
     result += array[i].preco;
   }
   const valorItem = document.querySelector("#precoTotal");
-  return (valorItem.innerText = result);
+  return (valorItem.innerText = `R$ ${result}`);
 }
