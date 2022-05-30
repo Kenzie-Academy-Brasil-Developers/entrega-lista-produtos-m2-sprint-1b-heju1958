@@ -20,6 +20,7 @@ function montarListaProdutos(listaProdutos) {
     li.append(img, h3, span, p);
     ul.append(li);
   });
+  somarTotalItems(produtos);
 }
 montarListaProdutos(produtos);
 
