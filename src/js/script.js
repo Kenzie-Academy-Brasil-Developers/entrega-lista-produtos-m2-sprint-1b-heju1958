@@ -1,4 +1,3 @@
-//listar nutrientes
 
 const ul = document.querySelector(".containerListaProdutos ul");
 let produtosCarrinho = [];
@@ -11,8 +10,12 @@ function montarListaProdutos(listaProdutos) {
     const h3 = document.createElement("h3");
     const span = document.createElement("span");
     const p = document.createElement("p");
+    const div = document.createElement("div");
     const button = document.createElement("button");
 
+    const componentes = listarComponentes(produto);
+
+    div.className = "containerButton";
     button.className = "botaoComprar";
     button.id = produto.id;
 
@@ -23,13 +26,38 @@ function montarListaProdutos(listaProdutos) {
     p.innerText = `R$ ${produto.preco}`;
     button.innerText = "Comprar";
 
-    li.append(img, h3, span, p, button);
+    li.append(img, h3, span, componentes, div);
+    div.append(p, button);
     ul.append(li);
 
     button.addEventListener("click", addProdCarrinho);
   });
 }
 montarListaProdutos(produtos);
+
+function listarComponentes(produto) {
+  const ol = document.createElement("ol");
+  ol.className = "dadosComponentes";
+
+  produto.componentes.forEach((componente) => {
+    const li = criarComponentes(componente);
+    ol.append(li);
+  });
+
+  return ol;
+}
+
+function criarComponentes(componente) {
+  const li = document.createElement("li");
+  const p1 = document.createElement("p");
+
+  li.className = "liComponentes";
+  p1.className = "liItem";
+  p1.innerText = componente;
+
+  li.append(p1);
+  return li;
+}
 
 const botaoBuscarTodos = document.querySelector(
   ".estiloGeralBotoes--mostrarTodos"
@@ -112,6 +140,7 @@ function itemCarrinho(carrinho) {
 
   carrinho.forEach((produto) => {
     const div = document.createElement("div");
+    const divConteudo = document.createElement("div");
     const img = document.createElement("img");
     const h3 = document.createElement("h3");
     const span = document.createElement("span");
@@ -119,6 +148,7 @@ function itemCarrinho(carrinho) {
     const button = document.createElement("button");
 
     div.className = "carrinho__conteudo";
+    divConteudo.className = "divAlinhar";
     img.className = "carrinho__img";
     h3.className = "carrinho__nomeItem";
     span.className = "carrinho__sessaoItem";
@@ -130,9 +160,10 @@ function itemCarrinho(carrinho) {
     h3.innerText = produto.nome;
     span.innerText = produto.secao;
     p.innerText = `R$ ${produto.preco}`;
-    button.innerText = "Remover";
+    button.innerHTML = '<i class="fa-solid fa-trash"></i>';
 
-    div.append(img, h3, span, p, button);
+    div.append(img, divConteudo, button);
+    divConteudo.append(h3, span, p);
     addCarrinho.append(div);
 
     button.addEventListener("click", () => removeProdCarrinho(produto));
@@ -159,7 +190,7 @@ function removeProdCarrinho(item) {
       result += Number(produto.preco);
       return true;
     }
-    return false
+    return false;
   });
   const valorItem = document.querySelector("#precoTotal");
   valorItem.innerText = `R$ ${result}`;

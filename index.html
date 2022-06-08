@@ -5,11 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/870d8af2d7.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Lista de Produtos</title>
   </head>
   <body>
     <header>
-      <h2 class="logo">Shop GoodPrice</h2>
+      <h2 class="logo">Shop now</h2>
       <div id="filters" class="filtersContainer">
         <div class="botoes">
           <button class="estiloGeralBotoes estiloGeralBotoes--mostrarTodos">
@@ -26,7 +30,7 @@
             Panificadora
           </button>
           <button class="estiloGeralBotoes estiloGeralBotoes--filtrarLaticínio">
-            Laticínio
+            Laticínios
           </button>
         </div>
         <div class="containerBuscaPorNome">
@@ -39,7 +43,7 @@
           <button
             class="estiloGeralBotoes estiloGeralBotoes--botaoBuscaPorNome"
           >
-            Buscar
+            <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
       </div>
@@ -48,17 +52,23 @@
       <div class="containerListaProdutos" id="listProdutos">
         <ul></ul>
       </div>
-      <div class="container__carrinhoBox">
-        <div class="carrinhoBox">
-          <p class="carrinho__nome">Carrinho</p>
-          <div class="carrinho"></div>
-
-          <div class="carrinho__content">
-            <p class="carrinho__quantidade">
-              Quantidade :
-              <span id="quantidadeItem"> </span>
+      <div class="carrinhoBox">
+        <p class="carrinho__nome">
+          <i class="fa-solid fa-cart-shopping"></i>carrinho
+        </p>
+        <div class="carrinho">
+          <div class="iconCart">
+            <i class="fa-solid fa-basket-shopping"></i>
+            <p class="iconCart__text">
+              Por enquanto não temos produtos no carrinho
             </p>
           </div>
+        </div>
+        <div class="carrinho__content">
+          <p class="carrinho__quantidade">
+            Quantidade :
+            <span id="quantidadeItem"> </span>
+          </p>
         </div>
         <p class="carrinho__Total">
           Total :
