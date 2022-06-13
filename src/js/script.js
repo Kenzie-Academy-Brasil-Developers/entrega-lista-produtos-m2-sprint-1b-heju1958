@@ -195,6 +195,7 @@ function removeProdCarrinho(item) {
   const valorItem = document.querySelector("#precoTotal");
   valorItem.innerText = `R$ ${result}`;
   itemCarrinho(produtosCarrinho);
+  quantidadeCarrinho(produtosCarrinho);
 }
 
 function somarTotalItems(array) {

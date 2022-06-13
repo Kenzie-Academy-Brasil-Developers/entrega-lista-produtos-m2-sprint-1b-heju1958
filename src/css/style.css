@@ -4,9 +4,9 @@
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
- margin: 0;
+  margin: 0;
 }
-header{
+header {
   margin-left: 13%;
   margin-right: 13%;
 }
@@ -15,7 +15,7 @@ header{
   height: auto;
   display: flex;
   gap: 5px;
- margin-left: 15%;
+  margin-left: 15%;
 }
 .logo {
   align-items: center;
@@ -97,7 +97,7 @@ header{
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  padding:0;
+  padding: 0;
 }
 .containerListaProdutos > ul > li {
   color: rgb(0, 0, 0);
@@ -272,11 +272,168 @@ header{
   color: white;
   background-color: gray;
 }
+@media (max-width: 1024px) {
+  body {
+    background: white;
+    margin: auto;
+    width: auto;
+    height: auto;
+  }
+  .filtersContainer {
+    width: auto;
+    height: auto;
+    font-size: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  .containerBuscaPorNome {
+    margin-left: 80px;
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 40px;
+  }
+  .containerListaProdutos ul {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+  .containerListaProdutos {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: start;
+  }
+  .mainBox {
+    gap: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2px;
+  }
+  .carrinhoBox {
+    width: 90%;
+    height: auto;
+  }
+  .carrinho__nome {
+    width: 95%;
+  }
+}
+@media (max-width: 769px) {
+  body {
+    background: white;
+    margin: auto;
+    width: auto;
+    height: auto;
+  }
+  .filtersContainer {
+    width: auto;
+    height: auto;
+    font-size: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  .containerBuscaPorNome {
+    margin-left: 80px;
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 40px;
+  }
+  .containerListaProdutos ul {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-y: scroll;
+  }
+  .containerListaProdutos {
+    width: 100%;
+    overflow-x: scroll;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: start;
+  }
+  .mainBox {
+    gap: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2px;
+  }
+  .carrinhoBox {
+    width: 90%;
+    height: auto;
+  }
+  .carrinho__nome {
+    width: 95%;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    background: white;
+    margin: auto;
+    width: auto;
+    height: auto;
+  }
+  .filtersContainer {
+    width: auto;
+    height: auto;
+    font-size: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  .botoes {
+    overflow-y: scroll;
+  }
+  .containerBuscaPorNome {
+    margin-left: 35px;
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 40px;
+  }
+  .containerListaProdutos ul {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-y: scroll;
+  }
+  .containerListaProdutos {
+    width: 100%;
+    overflow-x: scroll;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: start;
+  }
+  .mainBox {
+    gap: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2px;
+  }
+  .carrinhoBox {
+    width: 90%;
+    height: auto;
+  }
+  .carrinho__nome {
+    width: 95%;
+  }
+}
 
 @media (max-width: 360px) {
   body {
     background: white;
     margin: auto;
+  }
+  header {
+    margin: 0 0 0 0;
   }
   .logo {
     margin-top: 0px;
@@ -284,17 +441,22 @@ header{
     margin: auto;
   }
   .filtersContainer {
+    width: auto;
+    height: auto;
     font-size: 35px;
     display: flex;
     flex-wrap: wrap;
-    overflow-y: scroll;
     margin-top: 10px;
     padding: 10px;
   }
+  .botoes {
+    overflow-y: scroll;
+  }
   .containerBuscaPorNome {
     display: flex;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    justify-content: center;
+    width: 350px;
+    height: 40px;
   }
   .mainBox {
     gap: 0;
@@ -314,14 +476,6 @@ header{
   .containerListaProdutos ul {
     justify-content: flex-start;
     flex-wrap: nowrap;
-  }
-  ul {
-    width: auto;
-    height: 300px;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    padding: 0;
   }
   .estiloGeralBotoes {
     font-size: 16px;
